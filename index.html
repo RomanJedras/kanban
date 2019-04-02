@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kanban board</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<section id="board" class="container-fluid board">
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <h1>Kanban board</h1>
+      <button class="btn btn-success create-column"> + Add a column</button>
+      <div id="count" class="column-count"></div>
+      <div id="cl-con" class="column-container"></div>
+    </div>
+  </div>
+</section>
+
+
+<script id="column-template" type="x-tmpl-mustache">
+    <div id="{{ id }}" class="column">
+        <h2 class="column-title">{{ name }}</h2>
+        <a class="add-card" href="">Add a card</a>
+        <span class="circle-item">
+        <a class="btn-delete" href="#">X</a>
+        </span>
+        <ul id={{ id }} class="column-card-list"></ul>
+     </div>
+</script>
+
+<script id="card-template" type="x-tmpl-mustache">
+  <div class="card {{class}}">
+    <span class="card-id">{{ id }}</span>
+    <p class="card-title">{{ title }}</p>
+    <p class="card-description">{{ description }}</p>
+    <a href="#" class="btn-delete">x</a>
+  </div
+</script>
+
+<script type="text/javascript" src="vendor/mustashe/mustache.js"></script>
+<script type="text/javascript" src="vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
